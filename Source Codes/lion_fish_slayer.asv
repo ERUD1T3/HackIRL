@@ -1,0 +1,3 @@
+% Source code for the lion Fish slayer neural net
+
+lion_fish_slayer = alexnet;
