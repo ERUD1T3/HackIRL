@@ -30,7 +30,7 @@ function lion_fish_slayer()
     [LionFishSlayer,info] = trainNetwork(fish_train, layers, opts); 
 
     %plot training loss
-    plot(info.TraininLoss) 
+    plot(info.TrainingLoss) 
     %reading image input layer
     %prediction = LionFishSlayer.classify(img1)
 
