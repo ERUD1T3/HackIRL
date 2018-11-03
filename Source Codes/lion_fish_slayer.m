@@ -1,14 +1,17 @@
 
 
 function lion_fish_slayer()
-
+    %Data preprocessing
+    fishds = imageDatastore('Dataset','IncludeSubfolders', true , 'LabelSource', 'foldernames', 'ReadFcn', @readfish);
+    %img = lionfishds.read()
+    [fish_train, fish_test] = splitEachLabel(fishds, .8, 'randomized')
     % Source code for the lion Fish slayer neural net
-    img1 = readfish('Dataset/lionfish/lionfish.jpg')
-    imshow(img1)
+    %img1 = readfish('Dataset/lionfish/lionfish.jpg');
+    %imshow(img);
     LionFishSlayer = alexnet;
 
     %reading image input layer
-    prediction = LionFishSlayer.classify(img1)
+    %prediction = LionFishSlayer.classify(img1)
 
 end
 
