@@ -1,19 +1,21 @@
-%%
+%% Setup 
 clear rpi
-
+clear fishPreds
+clear img
+clear raw_img
+    
+load('CNN.mat');
 rpi = raspi('169.254.0.2','pi', 'raspberry');
 myserialdevice = serialdev(rpi,'/dev/ttyAMA0')
-cam = cameraboard(rpi,'Resolution','1980x1980');
+cam = cameraboard(rpi,'Resolution','800x600');
 
- clear fishPreds
- clear img
- clear raw_img
-    
+writeChId = 618366;
+writeKey = 'FQDCKUZNJUN5IMLP';
+%% Run
+lionfishcount = 0
 
-%%
-for i = 1:1000
+for i = 1:500
     
-   
     raw_img = snapshot(cam);
     image(raw_img);
     drawnow;
@@ -27,9 +29,19 @@ for i = 1:1000
     
     if fishPreds == 'lionfish'
         disp('lionfish detected')
+        lionfishcount = lionfishcount + 1
+        for i = 1:1000
+            if(confidence(i) > .01)
+                thingSpeakWrite(writeChId,confidence(i),'Writekey',writeKey);
+                disp('updating cloud')
+                pause(15)
+            end
+        end 
+        disp('Done!')
         break
     else 
-        disp(fishPreds)
+        %disp(fishPreds)
+        disp('not lionfish')
     end
     
 end
