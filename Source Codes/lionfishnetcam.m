@@ -11,10 +11,10 @@ cam = cameraboard(rpi,'Resolution','800x600');
 
 writeChId = 618366;
 writeKey = 'FQDCKUZNJUN5IMLP';
-%% Run
+%% Launching Code
 lionfishcount = 0
 
-for i = 1:500
+for iteration = 1:500
     
     raw_img = snapshot(cam);
     image(raw_img);
@@ -30,9 +30,9 @@ for i = 1:500
     if fishPreds == 'lionfish'
         disp('lionfish detected')
         lionfishcount = lionfishcount + 1
-        for i = 1:1000
-            if(confidence(i) > .01)
-                thingSpeakWrite(writeChId,confidence(i),'Writekey',writeKey);
+        for scores = 1:1000
+            if(confidence(score) > .01)
+                thingSpeakWrite(writeChId,confidence(score),'Writekey',writeKey);
                 disp('updating cloud')
                 pause(15)
             end
