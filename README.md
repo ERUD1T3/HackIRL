@@ -1,7 +1,7 @@
 # Hack river lagoon LionFishSlayerNet (We make high tech lionfish extermination tools)
   Link to hackathon notes
   
-  https://docs.google.com/document/d/1KPcapY3LNtZ5nnSNl-_BrrGktfDZ_psH2LO7PlWli50/edit#
+  https://docs.google.com/document/d/1KPcapY3LNtZ5nnSNl-_BrrGktfDZ_psH2LO7PlWli50/edit?usp=sharing
   
 # How it works
 
