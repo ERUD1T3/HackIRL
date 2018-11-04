@@ -14,4 +14,5 @@
   
 # Current Issues
   Loss in accuracy when dealing with non-lionfishes
+  Requires proximity to subject
   
