@@ -30,9 +30,9 @@ for iteration = 1:500
     if fishPreds == 'lionfish'
         disp('lionfish detected')
         lionfishcount = lionfishcount + 1
-        for scores = 1:1000
-            if(confidence(score) > .01)
-                thingSpeakWrite(writeChId,confidence(score),'Writekey',writeKey);
+        for iteration = 1:1000
+            if(confidence(iteration) > .01)
+                thingSpeakWrite(writeChId,confidence(iteration),'Writekey',writeKey);
                 disp('updating cloud')
                 pause(15)
             end
